@@ -1,0 +1,60 @@
+██╗   ██╗███████╗██████╗ ███╗   ██╗ █████╗ ███╗   ███╗
+██║   ██║██╔════╝██╔══██╗████╗  ██║██╔══██╗████╗ ████║
+██║   ██║█████╗  ██████╔╝██╔██╗ ██║███████║██╔████╔██║
+╚██╗ ██╔╝██╔══╝  ██╔══██╗██║╚██╗██║██╔══██║██║╚██╔╝██║
+ ╚████╔╝ ███████╗██║  ██║██║ ╚████║██║  ██║██║ ╚═╝ ██║
+  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝     ╚═╝
+
+VERNAM LICENSE
+Version 1, 2026
+
+Copyright (C) 2026 PrivacyTools.io
+https://www.privacytools.io
+
+Everyone is permitted to copy and distribute verbatim or modified
+copies of this license document, and changing it is allowed as long
+as the name is changed.
+
+PREAMBLE
+
+We build PrivacyTools.io because we believe strong, free cryptography
+makes the world better. It protects the people who need protecting, and
+it answers to no one. We release this work under the most permissive
+terms we can write, because tools that defend people should spread
+without friction and without asking permission.
+
+This preamble is our philosophy. It is not a restriction. The binding
+terms are below.
+
+TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+0. You just DO WHAT YOU WANT TO, with one catch:
+
+1. Wherever you host, publish, distribute, or build on this work, show a
+clear and visible credit to PrivacyTools.io that links to
+https://www.privacytools.io. Keep it somewhere ordinary people can see it
+(a footer line is plenty), make the link work, and do not imply that
+PrivacyTools.io endorses you. That is the whole deal: do what you want, just
+send people back to us.
+
+2. Patents. To the extent the authors hold any patent rights necessary to
+use this work, they grant you a free, worldwide, non-exclusive license to
+those rights. If you start a patent lawsuit claiming this work infringes a
+patent, the rights granted to you here end on the day you file.
+
+3. Names. "PrivacyTools.io" and "VERNAM" are names we answer to, not names
+we are handing over. The credit link above is a requirement, not a grant:
+it does not let you use our names or marks as your own, or in any way that
+suggests we made or endorse your version.
+
+THIS WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. THE AUTHORS
+ARE NOT LIABLE FOR ANYTHING YOU DO WITH IT.
+
+----------------------------------------------------------------------------------
+
+This work bundles third-party components that keep their own licenses: libsodium
+(vendored at vendor/sodium.js, ISC License) and the BIP-0039 English wordlist
+(wordlist.js, MIT License). Their full notices are in THIRD-PARTY-LICENSES.txt and
+are unaffected by the terms above. The cryptographic algorithms used
+(XChaCha20-Poly1305, Argon2id, BLAKE2) are open, unpatented standards and carry no
+licensing obligations of their own.
