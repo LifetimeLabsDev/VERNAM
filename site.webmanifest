@@ -1,0 +1,20 @@
+{
+  "name": "VERNAM, encrypt any file in your browser",
+  "short_name": "VERNAM",
+  "description": "Free, open-source, fully client-side file encryption. Nothing is ever uploaded.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "lang": "en",
+  "dir": "ltr",
+  "background_color": "#0a0d12",
+  "theme_color": "#0a0d12",
+  "categories": ["utilities", "security", "productivity"],
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "/icon-512-maskable.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" },
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+  ]
+}

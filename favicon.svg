@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>VERNAM</title>
+  <rect width="64" height="64" fill="#0a0d12"/>
+  <rect x="0.00" y="0.00" width="18.47" height="18.47" rx="2.51" fill="#3498db"/>
+  <rect x="22.76" y="0.00" width="18.47" height="18.47" rx="2.51" fill="#3498db" fill-opacity="0.3"/>
+  <rect x="45.53" y="0.00" width="18.47" height="18.47" rx="2.51" fill="#3498db"/>
+  <rect x="0.00" y="22.76" width="18.47" height="18.47" rx="2.51" fill="#3498db" fill-opacity="0.3"/>
+  <rect x="22.76" y="22.76" width="18.47" height="18.47" rx="2.51" fill="#3498db"/>
+  <rect x="45.53" y="22.76" width="18.47" height="18.47" rx="2.51" fill="#3498db" fill-opacity="0.3"/>
+  <rect x="0.00" y="45.53" width="18.47" height="18.47" rx="2.51" fill="#3498db"/>
+  <rect x="22.76" y="45.53" width="18.47" height="18.47" rx="2.51" fill="#3498db" fill-opacity="0.3"/>
+  <rect x="45.53" y="45.53" width="18.47" height="18.47" rx="2.51" fill="#3498db"/>
+</svg>
