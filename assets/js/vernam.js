@@ -40,6 +40,14 @@
     high: { opslimit: 4, memlimit: 1024 * 1024 * 1024 },
   };
 
+  // Bounds for the KDF cost fields read from a file header on decrypt. They live
+  // outside the AEAD, so a hostile .vrn could request a huge Argon2 cost and
+  // OOM-crash the tab before the auth tag is ever checked. We only ever write
+  // the two PROFILES above, so anything beyond these bounds is rejected.
+  const MAX_OPSLIMIT = 10;
+  const MIN_MEMLIMIT = 8 * 1024 * 1024;     // 8 MiB
+  const MAX_MEMLIMIT = 1024 * 1024 * 1024;  // 1 GiB (our highest profile)
+
   let S = null; // libsodium, once ready
 
   async function ready() {
@@ -173,6 +181,8 @@
     } catch (e) {
       await sink.abort();
       throw e;
+    } finally {
+      try { s.memzero(key); } catch (e) {}
     }
   }
 
@@ -189,6 +199,14 @@
     const alg = head[5];
     const opslimit = rdU32le(head, 6);
     const memlimit = rdU32le(head, 10);
+    // Validate the (unauthenticated) KDF parameters before deriving the key, so a
+    // crafted file can't pick a rogue algorithm or an absurd memory cost.
+    if (alg !== s.crypto_pwhash_ALG_ARGON2ID13) {
+      throw new Error('Unsupported file (unknown key-derivation algorithm).');
+    }
+    if (opslimit < 1 || opslimit > MAX_OPSLIMIT || memlimit < MIN_MEMLIMIT || memlimit > MAX_MEMLIMIT) {
+      throw new Error('This file requests unsupported key-derivation settings and was not opened.');
+    }
     const salt = head.subarray(14, 14 + s.crypto_pwhash_SALTBYTES);
     const sHeader = head.subarray(30, 30 + s.crypto_secretstream_xchacha20poly1305_HEADERBYTES);
 
@@ -227,7 +245,7 @@
       if (e instanceof SyntaxError) throw new Error('Wrong passphrase, or the file is corrupted or was tampered with.');
       throw e;
     }
-    const outName = (meta && meta.n) ? meta.n : stripExt(file.name);
+    const outName = sanitizeName((meta && meta.n) ? meta.n : stripExt(file.name));
     const sink = await makeSink(outName);
 
     try {
@@ -245,11 +263,30 @@
     } catch (e) {
       await sink.abort();
       throw e;
+    } finally {
+      try { s.memzero(key); } catch (e) {}
     }
   }
 
   function stripExt(name) {
     return name.endsWith(EXT) ? name.slice(0, -EXT.length) : name + '.decrypted';
+  }
+
+  // The original filename is recovered from the (authenticated) metadata, but it
+  // was chosen by whoever encrypted the file, so treat it as untrusted when it
+  // becomes a save/download name: keep only the basename, strip control and
+  // bidi-override characters, drop leading dots, and cap the length.
+  function sanitizeName(name) {
+    let n = String(name == null ? '' : name);
+    n = n.split(/[\\/]/).pop();
+    n = n.replace(/[\u0000-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/g, '');
+    n = n.replace(/^\.+/, '').replace(/\s+/g, ' ').trim();
+    if (n.length > 200) {
+      const dot = n.lastIndexOf('.');
+      const ext = dot > 0 ? n.slice(dot) : '';
+      n = n.slice(0, 200 - ext.length) + ext;
+    }
+    return n || 'decrypted';
   }
 
   // Yield to the event loop so the UI can paint progress.
