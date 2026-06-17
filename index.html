@@ -212,6 +212,9 @@
   .btn:hover{filter:brightness(1.1); text-decoration:none}
   .btn-outline{background:transparent; border:1px solid var(--line); color:var(--text)}
   .btn-outline:hover{border-color:var(--accent); filter:none}
+  .btn-gh{background:rgba(52,152,219,.10); border:1px solid color-mix(in srgb, var(--accent) 40%, transparent); color:var(--text)}
+  .btn-gh:hover{background:rgba(52,152,219,.20); border-color:var(--accent); filter:none}
+  .btn-gh .star{color:#e0a83c}
 
   .features{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:28px}
   .feature{border:1px solid var(--line); background:var(--surface); border-radius:14px; padding:24px}
@@ -498,9 +501,10 @@
       <h2><!--V:openSource.headingPre-->Open source means<!--/V--><br class="brk"> <span class="gold"><!--V:openSource.headingAccent-->no secrets, no surprises.<!--/V--></span></h2>
       <p class="lede"><!--V:openSource.body-->Every line is public and open source, free to host yourself, just keep a visible credit linking back to <a href="https://www.privacytools.io" target="_blank" rel="noopener">PrivacyTools.io</a>. There is no server to hack, no account to leak, no telemetry, no ads. We could not see your files if we wanted to, and you never have to take our word for it.<!--/V--></p>
       <div class="btnrow">
-        <a class="btn" href="https://github.com/LifetimeLabsDev/VERNAM" target="_blank" rel="noopener">
+        <a class="btn btn-gh" href="https://github.com/LifetimeLabsDev/VERNAM" target="_blank" rel="noopener">
           <svg class="icon" style="width:18px;height:18px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 .1.8 1 1.8 1.3-.1.5-.4.8-.7 1-2.6.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 6-5.3 6.3.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-          <!--V:openSource.btnSource-->View source on GitHub<!--/V-->
+          <!--V:openSource.btnSource-->Star us on GitHub<!--/V-->
+          <svg class="icon star" style="width:17px;height:17px" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.26 6.85.59-5.2 4.51 1.56 6.7L12 16.9 5.89 20.56l1.56-6.7-5.2-4.51 6.85-.59L12 2Z"/></svg>
         </a>
         <a class="btn btn-outline" href="#how">
           <svg class="icon" style="width:18px;height:18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg>
@@ -564,12 +568,6 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 8a4 4 0 1 0 0 8c2 0 3-2 6-4s4-4 6-4a4 4 0 1 1 0 8c-2 0-3-2-6-4S8 8 6 8z"/></svg>
         <span><!--V:name.badge-->Over 100 years. Zero breaks.<!--/V--></span>
       </div>
-      <div class="brandcta">
-        <span><!--V:brandKit.text-->Writing about VERNAM? Grab the logo, mark, and colors.<!--/V--></span>
-        <a class="btn" href="https://www.privacytools.io/brand#vernam" target="_blank" rel="noopener"><!--V:brandKit.button-->Brand kit<!--/V-->
-          <svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
     </div>
   </section>
 
@@ -596,6 +594,16 @@
       <svg class="icon" style="width:20px;height:20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
       Encrypt a file now
     </a>
+  </section>
+
+  <!-- BRAND KIT -->
+  <section class="sec">
+    <div class="brandcta">
+      <span><!--V:brandKit.text-->Writing about VERNAM? Grab the logo, mark, and colors.<!--/V--></span>
+      <a class="btn" href="https://www.privacytools.io/brand#vernam" target="_blank" rel="noopener"><!--V:brandKit.button-->Brand kit<!--/V-->
+        <svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
   </section>
 
   <!-- BODY CREDIT (license attribution) -->

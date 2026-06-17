@@ -1,16 +1,20 @@
-```
-██╗   ██╗███████╗██████╗ ███╗   ██╗ █████╗ ███╗   ███╗
-██║   ██║██╔════╝██╔══██╗████╗  ██║██╔══██╗████╗ ████║
-██║   ██║█████╗  ██████╔╝██╔██╗ ██║███████║██╔████╔██║
-╚██╗ ██╔╝██╔══╝  ██╔══██╗██║╚██╗██║██╔══██║██║╚██╔╝██║
- ╚████╔╝ ███████╗██║  ██║██║ ╚████║██║  ██║██║ ╚═╝ ██║
-  ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝     ╚═╝
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/vernam-logo-dark.svg">
+  <img alt="VERNAM" src=".github/assets/vernam-logo-light.svg" width="360">
+</picture>
 
 **Encrypt any file, right in your browser.**
 Free, open source, and fully client-side. Nothing is ever uploaded.
 
 **[Try it live →](https://www.privacytools.io/encrypt)** · **[VERNAM.app →](https://VERNAM.app)**
+
+> ⭐️ **We just launched, and a single star genuinely helps.** VERNAM is free and
+> open source, with nothing to sell and no one funding it. If you think strong
+> encryption should be free for everyone, please
+> **[star us on GitHub](https://github.com/LifetimeLabsDev/VERNAM)**. It helps more
+> people find the project and keeps it alive.
+
+[![GitGem](https://gitgem.org/api/badge/github/LifetimeLabsDev/VERNAM.svg)](https://gitgem.org/github/LifetimeLabsDev/VERNAM)
 
 ---
 
